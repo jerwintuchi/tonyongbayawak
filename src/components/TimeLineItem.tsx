@@ -44,11 +44,13 @@ export default function TimelineItem({
             className={`flex items-center gap-4 mb-10 ${isLeft ? "flex-row" : "flex-row-reverse"}`}
         >
             {/* Content */}
-            <div className={`w-full md:w-2/3 ${isLeft ? "text-right pr-6" : "text-left pl-6"}`}>
-                <div className="bg-gray-800 bg-opacity-15 p-5 rounded-lg hover:bg-opacity-25 transition-all">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-1">{title}</h3>
-                    <p className="text-sm text-gray-500 mb-1">{date}</p>
-                    <p className="text-gray-700">{description}</p>
+            <div
+                className={`w-full md:w-1/2 ${isLeft ? "text-right pr-8" : "text-left pl-8"}`}
+            >
+                <div className="bg-blue-900 bg-opacity-40 p-6 rounded-xl hover:bg-opacity-30 transition-all">
+                    <h3 className="text-2xl font-bold text-blue-400 mb-2">{title}</h3>
+                    <p className="text-sm text-gray-400 mb-2">{date}</p>
+                    <p className="text-gray-300">{description}</p>
                 </div>
             </div>
 

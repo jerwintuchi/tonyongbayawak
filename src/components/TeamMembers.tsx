@@ -16,9 +16,6 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
             transition={{ duration: 0.5, delay: index * 0.2 }}
             className="bg-opacity-5 rounded-xl p-6 hover:bg-opacity-10 transition-all"
         >
-            <div className="bg-blue-500 text-red-300 p-4">
-                This should have a blue background and white text.
-            </div>
             <div className="relative w-48 h-48 mx-auto mb-6 overflow-hidden flex justify-center">
                 <Image
                     src={member.imageUrl}
@@ -38,7 +35,7 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
                         href={member.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-gray-600 "
+                        className="text-gray-400 hover:text-white "
                     >
                         <FaGithub className="github-icon w-6 h-6" />
                     </Link>
@@ -72,8 +69,8 @@ export default function TeamMembers() {
         <section className="py-20 px-4">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-white mb-4">Meet Our Team</h2>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto pb-10">
+                    <h2 className="text-4xl font-bold text-white mb-4">Meet the Team</h2>
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">
                         Get to know the brilliant minds behind our AI-powered forecasting solution.
                     </p>
                 </div>
