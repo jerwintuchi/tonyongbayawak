@@ -10,6 +10,7 @@ interface TimelineItemProps {
     description: string;
     isLeft: boolean;
     icon: IconType;
+    showModal: boolean;
 }
 
 export default function TimelineItem({
@@ -18,6 +19,7 @@ export default function TimelineItem({
     description,
     isLeft,
     icon: Icon,
+    showModal,
 }: TimelineItemProps) {
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
@@ -47,7 +49,7 @@ export default function TimelineItem({
             <div
                 className={`w-full md:w-1/2 ${isLeft ? "text-right pr-8" : "text-left pl-8"}`}
             >
-                <div className="bg-blue-900 bg-opacity-40 p-6 rounded-xl hover:bg-opacity-30 transition-all">
+                <div className={`bg-blue-900 hover:bg-blue-600 cursor-pointer bg-opacity-40 p-6 rounded-xl hover:bg-opacity-30 transition-shadow ${showModal ? "shadow-xl shadow-green-300 animate-pulse" : ""} ease-in duration-1000`}>
                     <h3 className="text-2xl font-bold text-blue-400 mb-2">{title}</h3>
                     <p className="text-sm text-gray-400 mb-2">{date}</p>
                     <p className="text-gray-300">{description}</p>

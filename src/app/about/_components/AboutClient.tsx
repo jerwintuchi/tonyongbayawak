@@ -10,47 +10,44 @@ import { useInView } from "react-intersection-observer";
 
 export default function AboutClient() {
     const [showModal, setShowModal] = useState(false);
-    const [doNotShowAgain, setDoNotShowAgain] = useState(false);
+    const [doNotShowAgain, setDoNotShowAgain] = useState(
+        () => window.sessionStorage.getItem('doNotShowAgain') === 'true'
+    );
     const { ref: timelineRef, inView } = useInView({ triggerOnce: true });
 
     useEffect(() => {
-        if (window.location && inView) {
-            // Check if the doNotShowAgain state variable is set to true in session storage
-            const sessionStorageValue = window.sessionStorage.getItem('doNotShowAgain');
-            if (sessionStorageValue === 'true') {
-                setShowModal(false);
-            } else {
-                setShowModal(true)
-            }
-
+        if (window.location && inView && !doNotShowAgain) {
+            setShowModal(true);
         }
+    }, [inView, doNotShowAgain]);
 
-        // Show the modal when the timeline is in view
-        /*         if (inView) {
-                    setShowModal(true);
-                } */
-    }, [inView]);
-
-    const handleClick = () => {
-        window.sessionStorage.setItem('doNotShowAgain', 'true');
-        setDoNotShowAgain(true)
-    }
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const isChecked = e.target.checked;
+        setDoNotShowAgain(isChecked);
+        window.sessionStorage.setItem('doNotShowAgain', isChecked.toString());
+    };
 
     return (
         <div className="min-h-screen bg-gradient-to-r from-black to-blue-900 py-24 px-6 relative overflow-hidden">
             {/* Info Modal */}
             <Dialog open={showModal} onOpenChange={setShowModal}>
-                <DialogContent className="fixed top-28 mr-4 left-1/2 transform -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0 w-80 max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl bg-white rounded-lg shadow-lg p-4 md:p-6">
+                <DialogContent className="fixed top-28 mr-4 left-1/2 transform -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0 w-80 max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl bg-blue-500 rounded-lg p-4 md:p-6">
                     <DialogHeader>
-                        <DialogTitle>Did You Know?</DialogTitle>
+                        <DialogTitle className='text-white'>Hey there!</DialogTitle>
                     </DialogHeader>
-                    <p className="text-sm text-gray-700">Click on any timeline item to navigate to a related page and explore more details!</p>
+                    <p className="text-sm text-white">Click on any Progress Card to navigate to a related page and explore more details!</p>
                     <div className='flex flex-row justify-start'>
-                        <input className='flex flex-row mr-2' type="checkbox" id="doNotShowAgain" checked={doNotShowAgain} onChange={(e) => e.target.checked ? handleClick() : setDoNotShowAgain(false)} />
-                        <span className='text-sm flex flex-row'>Do not show again</span>
+                        <input
+                            className='mr-2'
+                            type="checkbox"
+                            id="doNotShowAgain"
+                            checked={doNotShowAgain}
+                            onChange={handleCheckboxChange}
+                        />
+                        <label htmlFor="doNotShowAgain" className='text-sm text-gray-200'>Do not show again</label>
                     </div>
                     <DialogClose asChild>
-                        <Button variant="outline" className=" w-full">Got it!</Button>
+                        <Button variant="outline" className="w-full">Got it!</Button>
                     </DialogClose>
                 </DialogContent>
             </Dialog>
@@ -69,13 +66,14 @@ export default function AboutClient() {
             {/* Timeline Section */}
             <div className="max-w-7xl mx-auto relative flex flex-col items-center px-4">
                 {timelineData.map((item, index) => (
-                    <div ref={index === 0 ? timelineRef : null} key={index} className="w-full">
+                    <div ref={index === 1 ? timelineRef : null} key={index} className="w-full">
                         <TimelineItem
                             title={item.title}
                             date={item.date}
                             description={item.description}
                             isLeft={index % 2 === 0}
                             icon={item.icon}
+                            showModal={showModal}
                         />
                     </div>
                 ))}
@@ -83,3 +81,4 @@ export default function AboutClient() {
         </div>
     );
 }
+
