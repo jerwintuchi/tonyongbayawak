@@ -35,7 +35,7 @@ export default function AboutClient() {
                     <DialogHeader>
                         <DialogTitle className='text-white'>Hey there!</DialogTitle>
                     </DialogHeader>
-                    <p className="text-sm text-white">Click on any Progress Card to navigate to a related page and explore more details!</p>
+                    <p className="text-sm text-white">You can click on any Progress Card to navigate to a related page and explore more details!</p>
                     <div className='flex flex-row justify-start'>
                         <input
                             className='mr-2'
