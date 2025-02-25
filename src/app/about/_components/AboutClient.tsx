@@ -73,6 +73,7 @@ export default function AboutClient() {
                             description={item.description}
                             isLeft={index % 2 === 0}
                             icon={item.icon}
+                            link={item.link as `https://${string}` | `http://${string}`}
                             showModal={showModal}
                         />
                     </div>
