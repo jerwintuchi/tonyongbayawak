@@ -5,8 +5,9 @@ import BackToTimeline from '@/components/buttons/back-timeline-btn';
 import Image from 'next/image';
 import LSTMDropdown from './LSTMDropdown';
 import LSTMExplanation from './LSTMExplanation';
-import ImportantInfo from './ImportantInfo';
+
 import SOP from './SOP';
+import { ImportantInfo } from './ImportantInfo';
 
 export default function TitleProposalClient() {
     return (
