@@ -25,19 +25,35 @@ export default function TitleProposalClient() {
                     comprehensive research plan that outlined our methodologies, expected outcomes, and
                     potential contributions to the field.
                 </p>
-                <h2 className="text-2xl text-blue-300 font-semibold mb-4">Objectives</h2>
+
+                <h2 className="text-2xl text-blue-300 font-semibold mb-4">Supporting Studies</h2>
+                <p className="text-gray-300 mb-4">
+                    Predictive modeling for cryptocurrency forecasting has gained significant attention due to
+                    the high volatility of digital assets. Studies by Edwards (2019) and Pedamkar (2022)
+                    emphasize that machine learning techniques, such as Long Short-Term Memory (LSTM) networks,
+                    are highly effective in capturing patterns in financial time series data. Additionally,
+                    research by Kylie (2019) from CoinMarketCap highlights the importance of using a
+                    volume-weighted approach to improve forecasting accuracy.
+                </p>
+
+                <h2 className="text-2xl text-blue-300 font-semibold mb-4">Methodology</h2>
+                <p className="text-gray-300 mb-4">
+                    The study employs a quantitative research approach, utilizing a predictive analytics
+                    framework. The methodology consists of three phases:
+                </p>
                 <ul className="text-gray-300 list-disc pl-6 mb-4">
-                    <li>Develop a predictive model for AXS price forecasting using LSTM.</li>
-                    <li>Analyze historical market data to identify patterns and trends.</li>
-                    <li>Validate the model’s accuracy using RMSE as a scoring metric.</li>
-                    <li>Deploy the model to an interactive web application for investor use.</li>
+                    <li>Data Collection: Gathering historical AXS price data from Cryptocompare API.</li>
+                    <li>Data Processing: Cleaning and normalizing data for training the LSTM model.</li>
+                    <li>Model Development: Training and evaluating the predictive model using RMSE.</li>
                 </ul>
+
                 <h2 className="text-2xl text-blue-300 font-semibold mb-4">Significance of the Study</h2>
                 <p className="text-gray-300">
                     This project serves as a valuable tool for AXS investors, aiding in informed
                     decision-making by providing data-driven insights. By leveraging machine learning
                     techniques, we aim to bridge the gap between technical analysis and investment
-                    strategies in the cryptocurrency market.
+                    strategies in the cryptocurrency market. Additionally, this study contributes to the
+                    growing field of AI-powered financial forecasting, offering new perspectives on digital asset predictions.
                 </p>
             </div>
 
