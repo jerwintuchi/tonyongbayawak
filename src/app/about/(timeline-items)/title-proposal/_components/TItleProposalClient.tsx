@@ -1,8 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import BackToTimeline from '@/components/buttons/back-timeline-btn';
 
 export default function TitleProposalClient() {
     return (
@@ -44,11 +43,7 @@ export default function TitleProposalClient() {
 
             {/* Navigation */}
             <div className="text-center mt-10">
-                <Link href="/about">
-                    <Button variant="outline" className="text-white border-white hover:bg-white hover:text-blue-900">
-                        Back to Timeline
-                    </Button>
-                </Link>
+                <BackToTimeline />
             </div>
         </div>
     );
