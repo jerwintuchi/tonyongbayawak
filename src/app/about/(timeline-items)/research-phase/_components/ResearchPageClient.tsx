@@ -6,7 +6,7 @@ import BackToTimeline from '@/components/buttons/back-timeline-btn';
 import HeroSection from "./HeroSection";
 
 
-import StatisticalTreatment from "./StatisticalTreatment";
+import { StatisticalTreatment } from "./StatisticalTreatment";
 import { Methodology } from "./Methodology";
 import { RRL } from "./RRL";
 

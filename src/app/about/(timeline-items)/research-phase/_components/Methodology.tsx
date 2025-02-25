@@ -34,7 +34,7 @@ export function Methodology() {
                     </div>
                     <div className="text-center col-span-1 md:col-span-2 lg:col-span-3">
                         <Image src="/diagrams/system-architecture2.png" alt="System Architecture 2" width={600} height={350} className="rounded-lg shadow-md mx-auto w-full max-w-xl" />
-                        <p className="text-sm text-gray-400 mt-2">Fig. 4 - System Architecture</p>
+                        <p className="text-sm text-gray-400 mt-2">Fig. 3 - System Architecture</p>
                     </div>
                 </div>
 
@@ -58,7 +58,11 @@ export function Methodology() {
                 <p className="text-gray-300 mb-4">
                     The study follows the <strong>Waterfall Methodology</strong>, dividing development into three phases:
                 </p>
-                <ul className="list-disc list-inside text-gray-300 mb-4">
+                <div className="text-center my-6">
+                    <Image src="/diagrams/waterfall-method.png" alt="Feature Variables" width={600} height={350} className="rounded-lg shadow-md mx-auto" />
+                    <p className="text-sm text-gray-400 mt-2">Fig. 4 -Waterfall methodology for the Project </p>
+                </div>
+                <ul className="list-disc list-inside text-gray-300 mb-4 text-center">
                     <li><strong>Phase 1:</strong> Data Gathering and Cleaning</li>
                     <li><strong>Phase 2:</strong> Model Training and Validation</li>
                     <li><strong>Phase 3:</strong> Deployment and Evaluation</li>
