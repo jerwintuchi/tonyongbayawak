@@ -11,7 +11,7 @@ export interface TimelineItemProps {
     description: string;
     isLeft: boolean;
     icon: IconType;
-    link: `https://${string}` | `http://${string}`;
+    link: string;
     showModal: boolean;
 }
 
