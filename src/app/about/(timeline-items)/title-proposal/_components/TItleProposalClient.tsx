@@ -82,8 +82,9 @@ export default function TitleProposalClient() {
             <div className="max-w-6xl mx-auto bg-white bg-opacity-10 p-8 mt-8 rounded-lg shadow-lg">
                 <h2 className="text-3xl text-blue-300 font-semibold mb-4">Significance of the Study</h2>
                 <p className="text-gray-300 mb-4">
-                    The proposed model offers <strong>data-driven insights</strong> to investors, reducing uncertainty and <strong>minimizing financial risk</strong>.
-                    By integrating LSTM into forecasting, we provide a <strong>more accurate and robust prediction tool</strong> for long-term AXS investment strategies.
+                    The project serves as a valuable tool for <strong>AXS investors</strong>, offering guidance in navigating cryptocurrency&apos;s high volatility and financial risks.
+                    It benefits <strong>Filipino investors</strong> by aiding long-term strategies and contributes to research on machine learning&apos;s role in AXS price prediction,
+                    addressing the gap in existing local studies.
                 </p>
             </div>
 
