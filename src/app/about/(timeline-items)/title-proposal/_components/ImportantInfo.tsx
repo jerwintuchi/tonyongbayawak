@@ -10,7 +10,7 @@ export function ImportantInfo() {
             <div className="max-w-6xl mx-auto bg-white bg-opacity-10 p-8 mt-8 rounded-lg shadow-lg">
                 <h2 className="text-3xl text-blue-300 font-semibold mb-4 text-center">Conceptual Framework</h2>
                 <div className="text-center my-6">
-                    <Image src="/diagrams/feature-variables.png" alt="Feature Variables" width={600} height={350} className="rounded-lg shadow-md mx-auto" />
+                    <Image src="/diagrams/feature-variables.svg" alt="Feature Variables" width={600} height={350} className="rounded-lg shadow-md mx-auto" />
                     <p className="text-sm text-gray-400 mt-2">Fig. 2 - Key Variables for Predictive Model Development</p>
                 </div>
                 <h3 className="text-3xl text-blue-300 font-semibold mb-4">Feature Variables</h3>

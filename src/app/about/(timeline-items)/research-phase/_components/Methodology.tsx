@@ -22,18 +22,18 @@ export function Methodology() {
                 {/* Activity, Use Case, System Design Diagrams */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className="text-center">
-                        <Image src="/diagrams/activity.png" alt="Activity Diagram" width={600} height={350} className="rounded-lg shadow-md mx-auto w-full" />
+                        <Image src="/diagrams/activity.svg" alt="Activity Diagram" width={600} height={350} className="rounded-lg shadow-md mx-auto w-full" />
                         <p className="text-sm text-gray-400 mt-2">Fig. 1 - Activity Diagram</p>
                     </div>
                     <div className="text-center">
-                        <Image src="/diagrams/use-case.png" alt="Use Case Diagram" width={600} height={350} className="rounded-lg shadow-md mx-auto w-full" />
+                        <Image src="/diagrams/use-case.svg" alt="Use Case Diagram" width={600} height={350} className="rounded-lg shadow-md mx-auto w-full" />
                         <p className="text-sm text-gray-400 mt-2">Fig. 2 - Use Case Diagram</p>
                     </div>
                     <div className="text-center col-span-1 md:col-span-2 lg:col-span-3">
-                        <Image src="/diagrams/system-architecture1.png" alt="System Architecture 1" width={600} height={350} className="rounded-lg shadow-md mx-auto w-full max-w-xl" />
+                        <Image src="/diagrams/system-architecture1.svg" alt="System Architecture 1" width={600} height={350} className="rounded-lg shadow-md mx-auto w-full max-w-xl" />
                     </div>
                     <div className="text-center col-span-1 md:col-span-2 lg:col-span-3">
-                        <Image src="/diagrams/system-architecture2.png" alt="System Architecture 2" width={600} height={350} className="rounded-lg shadow-md mx-auto w-full max-w-xl" />
+                        <Image src="/diagrams/system-architecture2.svg" alt="System Architecture 2" width={600} height={350} className="rounded-lg shadow-md mx-auto w-full max-w-xl" />
                         <p className="text-sm text-gray-400 mt-2">Fig. 3 - System Architecture</p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ export function Methodology() {
                     The study follows the <strong>Waterfall Methodology</strong>, dividing development into three phases:
                 </p>
                 <div className="text-center my-6">
-                    <Image src="/diagrams/waterfall-method.png" alt="Feature Variables" width={600} height={350} className="rounded-lg shadow-md mx-auto" />
+                    <Image src="/diagrams/waterfall-method.svg" alt="Feature Variables" width={600} height={350} className="rounded-lg shadow-md mx-auto" />
                     <p className="text-sm text-gray-400 mt-2">Fig. 4 -Waterfall methodology for the Project </p>
                 </div>
                 <ul className="list-disc list-inside text-gray-300 mb-4 text-center">

@@ -29,7 +29,7 @@ export function RRL() {
 
             {/* Image Example */}
             <div className="text-center my-6">
-                <Image src="/diagrams/ROI.jpg" alt="Crypto Investment in the Philippines" width={600} height={350} className="rounded-lg shadow-md mx-auto" />
+                <Image src="/diagrams/ROI.svg" alt="Crypto Investment in the Philippines" width={600} height={350} className="rounded-lg shadow-md mx-auto" />
                 <p className="text-sm text-gray-400 mt-2">Fig. 1 - Range of the Return of Investment among players</p>
             </div>
             <p className="text-gray-300 mb-4">

@@ -23,7 +23,7 @@ export default function ResearchPageClient() {
             <StatisticalTreatment />
             {/* Navigation */}
             <div className="text-center mt-10">
-                <BackToTimeline />
+                <BackToTimeline /> 
             </div>
         </div>
     );
