@@ -10,8 +10,8 @@ export default function ModelEvaluation() {
                     The Two tables above display the model’s architecture and hyperparameters configured by the proponents, which serve as the foundation for the trial-and-error training process. The evaluation aims to understand how different architectures learn and generalize based on the configured hyperparameters.
                 </p>
                 <div className='flex flex-col md:flex-row justify-center mt-4 gap-4'>
-                    <Image src="/diagrams/layered-rnn.png" alt="Layered RNN" quality={100} width={500} height={300} className="w-full h-auto md:w-[500px] rounded-lg shadow-md bg-white" />
-                    <Image src="/diagrams/unlayered-rnn.png" alt="Unlayered RNN" quality={100} width={500} height={300} className="w-full h-auto md:w-[500px] rounded-lg shadow-md bg-white" />
+                    <Image src="/diagrams/layered-rnn.svg" alt="Layered RNN" quality={100} width={500} height={300} className="w-full h-auto md:w-[500px] rounded-lg shadow-md bg-white" />
+                    <Image src="/diagrams/unlayered-rnn.svg" alt="Unlayered RNN" quality={100} width={500} height={300} className="w-full h-auto md:w-[500px] rounded-lg shadow-md bg-white" />
                 </div>
                 <p className="text-sm text-gray-400 mt-2 text-center">Fig. 2 - Layered vs. Unlayered RNN Model Learning Behaviour</p>
 
@@ -34,8 +34,8 @@ export default function ModelEvaluation() {
                 </div>
 
                 <div className='flex flex-col md:flex-row justify-center mt-4 gap-4'>
-                    <Image src="/diagrams/layered-lstm.png" alt="Layered LSTM" quality={100} width={500} height={300} className="w-full h-auto md:w-[500px] rounded-lg shadow-md bg-white" />
-                    <Image src="/diagrams/unlayered-lstm.png" alt="Unlayered LSTM" quality={100} width={500} height={300} className="w-full h-auto md:w-[500px] rounded-lg shadow-md bg-white" />
+                    <Image src="/diagrams/layered-lstm.svg" alt="Layered LSTM" quality={100} width={500} height={300} className="w-full h-auto md:w-[500px] rounded-lg shadow-md bg-white" />
+                    <Image src="/diagrams/unlayered-lstm.svg" alt="Unlayered LSTM" quality={100} width={500} height={300} className="w-full h-auto md:w-[500px] rounded-lg shadow-md bg-white" />
                 </div>
                 <p className="text-sm text-gray-400 mt-2 text-center">Fig. 3 - Layered vs. Unlayered LSTM Model Learning Behaviour</p>
 
@@ -58,7 +58,7 @@ export default function ModelEvaluation() {
                 </div>
 
                 <div className='flex flex-row md:flex-row justify-center mt-4 gap-4'>
-                    <Image src="/diagrams/test-set-perf-all.png" alt="Model Performance" quality={100} width={500} height={300} className="rounded-lg shadow-md bg-white" />
+                    <Image src="/diagrams/all-model-perf.svg" alt="Model Performance" quality={100} width={1000} height={600} className="rounded-lg shadow-md bg-white" />
                 </div>
                 <p className="text-sm text-gray-400 mt-2 text-center">Fig. 4 - Test Set Performance of all Models</p>
 
