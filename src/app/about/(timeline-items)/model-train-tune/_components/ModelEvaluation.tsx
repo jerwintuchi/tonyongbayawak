@@ -1,5 +1,8 @@
 import BackToTimeline from '@/components/buttons/back-timeline-btn'
 import Image from 'next/image'
+import BenchmarkDiscussion from './BenchMarkDIscussion'
+import AllModelForecast from './AllModelForecast'
+import TunedModelTable from './TunedModelTable'
 
 export default function ModelEvaluation() {
     return (
@@ -58,7 +61,7 @@ export default function ModelEvaluation() {
                 </div>
 
                 <div className='flex flex-row md:flex-row justify-center mt-4 gap-4'>
-                    <Image src="/diagrams/all-model-perf.svg" alt="Model Performance" quality={100} width={1000} height={600} className="rounded-lg shadow-md bg-white" />
+                    <Image src="/diagrams/all-model-perf.svg" alt="All Model Performance" quality={100} width={1000} height={600} className="rounded-lg shadow-md bg-white" />
                 </div>
                 <p className="text-sm text-gray-400 mt-2 text-center">Fig. 4 - Test Set Performance of all Models</p>
 
@@ -85,7 +88,46 @@ export default function ModelEvaluation() {
                         In conclusion, <strong>layered models</strong> provide better learning capacity but require regularization, while <strong>MLR struggles</strong> due to its linear nature. The best-performing models balance complexity with proper regularization.
                     </p>
                 </div>
+
+                <div className='flex flex-row md:flex-row justify-center mt-4 gap-4'>
+                    <Image src="/diagrams/benchmark-summary.svg" alt="Benchmark Summary" quality={100} width={1000} height={600} className="rounded-lg shadow-md bg-white" />
+                </div>
+                <p className="text-sm text-gray-400 mt-2 text-center">Fig. 5 - Model Benchmark Summary</p>
+                {/* Benchmark Discussion */}
+                <BenchmarkDiscussion />
+                {/* All Model Forecast */}
+                <AllModelForecast />
+                {/* Tuned Model Section */}
+                <div className="flex flex-col items-center">
+                    <TunedModelTable />
+                    <p className="text-sm text-gray-400 mt-2 text-center">Fig. 5 - Tuned Model Architecture</p>
+
+                    <div className='flex flex-row md:flex-row justify-center mt-4 gap-4'>
+                        <Image src="/diagrams/tuned-model-learning.svg" alt="Tuned Model Learning" quality={100} width={600} height={300} className="rounded-lg shadow-md bg-white" />
+                    </div>
+                    <p className="text-sm text-gray-400 mt-2 text-center">Fig. 4 - Test Set Performance of all Models</p>
+
+                    <div className="mt-4 max-w-2xl text-gray-300 text-sm text-center">
+                        <h3 className="text-lg font-semibold text-gray-400">Tuned Model Learning Behavior Explanation</h3>
+                        <p>
+                            The graph presents the training loss (<span className="font-semibold">train_loss</span>) and validation loss (<span className="font-semibold">val_loss</span>) over the course of training.
+                        </p>
+                        <h4 className="mt-2 font-semibold text-gray-400">Observations:</h4>
+                        <ul className="list-disc list-inside text-left">
+                            <li>
+                                <span className="font-semibold">Training Loss Decreases:</span> The <span className="font-semibold">train_loss</span> (blue line) consistently declines, indicating that the model is effectively learning patterns from the training data.
+                            </li>
+                            <li>
+                                <span className="font-semibold">Validation Loss Stability:</span> The <span className="font-semibold">val_loss</span> (orange line) remains relatively constant, with a slight increase toward the end, which could be a sign of <span className="font-semibold">overfitting</span>.
+                            </li>
+                            <li>
+                                <span className="font-semibold">Potential Overfitting:</span> The widening gap between training and validation loss suggests that the model is fitting too closely to the training data, reducing its ability to generalize well to unseen data.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
 
             <div className="flex justify-center">
                 <BackToTimeline />
