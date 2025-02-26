@@ -115,10 +115,10 @@ export default function ModelEvaluation() {
                         <h4 className="mt-2 font-semibold text-gray-400">Observations:</h4>
                         <ul className="list-disc list-inside text-left">
                             <li>
-                                <span className="font-semibold">Training Loss Decreases:</span> The <span className="font-semibold">train_loss</span> (blue line) consistently declines, indicating that the model is effectively learning patterns from the training data.
+                                <span className="font-semibold">Training Loss Decreases:</span> The <span className="font-semibold text-blue-500"><strong>train_loss</strong></span>  consistently declines, indicating that the model is effectively learning patterns from the training data.
                             </li>
                             <li>
-                                <span className="font-semibold">Validation Loss Stability:</span> The <span className="font-semibold">val_loss</span> (orange line) remains relatively constant, with a slight increase toward the end, which could be a sign of <span className="font-semibold">overfitting</span>.
+                                <span className="font-semibold">Validation Loss Stability:</span> The <span className="font-semibold text-orange-400"><strong>val_loss</strong></span>  remains relatively constant, with a slight increase toward the end, which could be a sign of <span className="font-semibold">overfitting</span>.
                             </li>
                             <li>
                                 <span className="font-semibold">Potential Overfitting:</span> The widening gap between training and validation loss suggests that the model is fitting too closely to the training data, reducing its ability to generalize well to unseen data.
