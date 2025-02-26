@@ -1,13 +1,24 @@
+"use client";
+
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip';
-import { CodeBlock, dracula } from "react-code-blocks";
-import React from 'react';
+import dynamic from 'next/dynamic';
+import React, { useEffect, useState } from 'react';
+import { dracula } from 'react-code-blocks';
+
+const CodeBlock = dynamic(() => import("react-code-blocks").then(mod => mod.CodeBlock), { ssr: false });
 
 export default function MLRTable() {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const codeSnippet = `f.add_ar_terms(3151)
 f.add_seasonal_regressors('month','quarter',dummy=True)
 f.add_seasonal_regressors('year')
 f.add_time_trend()
-f.diff() #differenced since may trend
+f.diff() # differenced since may trend
 f.set_estimator('mlr')
 f.manual_forecast()`;
 
@@ -23,18 +34,18 @@ f.manual_forecast()`;
                         </tr>
                     </thead>
                     <tbody className="border-b border-gray-600">
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <tr className="border-b border-gray-600 hover:bg-blue-800 cursor-pointer">
-                                    <td className="p-3">Multiple Linear Regression (MLR)</td>
-                                    <td className="p-3">3151</td>
-                                    <td className="p-3">&apos;month&apos;, &apos;quarter&apos;, &apos;year&apos;</td>
-                                </tr>
-                            </TooltipTrigger>
-                            <TooltipContent className="bg-gray-900 text-white p-3 rounded-lg w-[600px]">
-                                <CodeBlock text={codeSnippet} language="python" theme={dracula} />
-                            </TooltipContent>
-                        </Tooltip>
+                        <tr className="border-b border-gray-600 hover:bg-blue-800 cursor-pointer">
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <td className="p-3 font-semibold">Multiple Linear Regression (MLR)</td>
+                                </TooltipTrigger>
+                                <TooltipContent className="bg-gray-900 text-white p-3 rounded-lg w-[600px]">
+                                    {mounted && <CodeBlock text={codeSnippet} language="python" theme={dracula} />}
+                                </TooltipContent>
+                            </Tooltip>
+                            <td className="p-3">3151</td>
+                            <td className="p-3">&apos;month&apos;, &apos;quarter&apos;, &apos;year&apos;</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
