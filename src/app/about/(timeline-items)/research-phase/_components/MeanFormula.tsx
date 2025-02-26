@@ -36,13 +36,13 @@ export default function MeanFormula() {
 
                 <p className="text-gray-300 mt-4">
                     Where:
-                    <ul className="list-disc pl-6">
-                        <li><strong>∑</strong> = Summation symbol (sum of all question items)</li>
-                        <li><strong>i</strong> = Starting index of summation</li>
-                        <li><strong>n</strong> = Total number of question items</li>
-                        <li><strong>xᵢ</strong> = Score of the question item</li>
-                    </ul>
                 </p>
+                <ul className="list-disc pl-6">
+                    <li><strong>∑</strong> = Summation symbol (sum of all question items)</li>
+                    <li><strong>i</strong> = Starting index of summation</li>
+                    <li><strong>n</strong> = Total number of question items</li>
+                    <li><strong>xᵢ</strong> = Score of the question item</li>
+                </ul>
             </div>
         </MathJaxContext>
     );

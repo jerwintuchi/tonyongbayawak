@@ -1,7 +1,18 @@
 "use client";
 
+import dynamic from "next/dynamic";
 
-import { MathJax, MathJaxContext } from "better-react-mathjax";
+
+// Disable SSR for MathJax
+const MathJaxContext = dynamic(
+    () => import("better-react-mathjax").then((mod) => mod.MathJaxContext),
+    { ssr: false }
+);
+const MathJax = dynamic(
+    () => import("better-react-mathjax").then((mod) => mod.MathJax),
+    { ssr: false }
+);
+
 
 export default function CronbachAlpha() {
     return (

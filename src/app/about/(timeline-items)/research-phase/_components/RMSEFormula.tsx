@@ -32,13 +32,14 @@ export default function RMSEFormula() {
 
                 <p className="text-gray-300 mt-4">
                     Where:
-                    <ul className="list-disc pl-6">
-                        <li><strong>∑</strong> = Summation symbol (sum of squared errors)</li>
-                        <li><strong>ŷᵢ</strong> = Predicted value for the i-th observation</li>
-                        <li><strong>yᵢ</strong> = Observed (actual) value for the i-th observation</li>
-                        <li><strong>n</strong> = Total number of observations in the dataset</li>
-                    </ul>
                 </p>
+                <ul className="list-disc pl-6">
+                    <li><strong>∑</strong> = Summation symbol (sum of squared errors)</li>
+                    <li><strong>ŷᵢ</strong> = Predicted value for the i-th observation</li>
+                    <li><strong>yᵢ</strong> = Observed (actual) value for the i-th observation</li>
+                    <li><strong>n</strong> = Total number of observations in the dataset</li>
+                </ul>
+
             </div>
         </MathJaxContext >
     );
