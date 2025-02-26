@@ -5,6 +5,7 @@ import Image from "next/image";
 import { CodeBlock, dracula } from "react-code-blocks";
 import ModelsTable from "./ModelsTable";
 import BackToTimeline from "@/components/buttons/back-timeline-btn";
+import MLRTable from "./MLRTable";
 
 export default function ModelTrainTuneClient() {
     return (
@@ -110,6 +111,7 @@ export default function ModelTrainTuneClient() {
                     hyperparameters and is trained using <strong>80%</strong> of the dataset which is the <strong>training set</strong> and validated using <strong>20%</strong> of the dataset which is the <strong>test set</strong>.
                 </p>
                 <ModelsTable />
+                <MLRTable />
             </div>
 
             {/* Model Evaluation */}
