@@ -33,12 +33,12 @@ export default function TestingClient() {
                 <div className="flex justify-center mt-4">
                     <Image src="/diagrams/reliability-testing.svg" alt="Reliability Testing Results" width={700} height={400} className="rounded-lg shadow-md bg-white" />
                 </div>
-                <p className="text-sm text-gray-400 mt-2 text-center">Fig. 3 - Reliability Testing Results</p>
+                <p className="text-sm text-gray-400 mt-2 text-center">Fig. 2 - Reliability Testing Results</p>
             </div>
 
-            {/* 4.2.4 Usability Testing */}
+            {/* Usability Testing */}
             <div className="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md mt-6">
-                <h3 className="text-lg font-semibold text-blue-300 mb-2">4.2.4 Usability Testing</h3>
+                <h3 className="text-lg font-semibold text-blue-300 mb-2">Usability Testing</h3>
                 <p className="text-gray-300">
                     Usability testing was conducted following <strong>ISO-9126 usability standards</strong>.
                     A survey was distributed to <strong>test users</strong>, evaluating the website’s <strong>ease of navigation, design clarity, and responsiveness</strong>.
@@ -47,7 +47,19 @@ export default function TestingClient() {
                 <div className="flex justify-center mt-4">
                     <Image src="/diagrams/usability-testing.svg" alt="Usability Testing Survey Results" width={700} height={400} className="rounded-lg shadow-md bg-white" />
                 </div>
-                <p className="text-sm text-gray-400 mt-2 text-center">Fig. 4 - Usability Testing Survey Results</p>
+                <p className="text-sm text-gray-400 mt-2 text-center">Fig. 3 - Usability Testing Survey Results</p>
+            </div>
+
+            {/* Portability Testing */}
+            <div className="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md mt-6">
+                <h3 className="text-lg font-semibold text-blue-300 mb-2">Portability Testing</h3>
+                <p className="text-gray-300">
+
+                </p>
+                <div className="flex justify-center mt-4">
+                    <Image src="/diagrams/usability-testing.svg" alt="Usability Testing Survey Results" width={700} height={400} className="rounded-lg shadow-md bg-white" />
+                </div>
+                <p className="text-sm text-gray-400 mt-2 text-center">Fig. 4 - Portability Testing Results</p>
             </div>
 
             {/* Conclusion */}
