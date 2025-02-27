@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { CodeBlock, dracula } from "react-code-blocks";
 import ModelsTable from "./ModelsTable";
 
 import MLRTable from "./MLRTable";
 import ModelEvaluation from "./ModelEvaluation";
+import Diagram from "@/components/Diagram";
 
 export default function ModelTrainTuneClient() {
     return (
@@ -86,10 +86,7 @@ export default function ModelTrainTuneClient() {
                 <p className="text-gray-300 mb-4 text-center p-4">
                     We instantiate a Forecaster object called <strong>&apos;f&apos;</strong> with the target variable <strong>(Closing Price)</strong> and current dates to plot the historic price of the AXS.
                 </p>
-                <div className='flex flex-col md:flex-row justify-center mt-4'>
-                    <Image src="/diagrams/axs-history.svg" alt="Hyperparameter Tuning" width={500} height={300} className="rounded-lg shadow-md w-full bg-white" />
-                </div>
-                <p className="text-sm text-gray-400 mt-2 text-center">Fig. 1 - AXS Price History</p>
+                <Diagram src="axs-history.svg" alt="Hyperparameter Tuning" width={500} height={300} className="rounded-lg shadow-md w-full bg-white" title="AXS Price History" />
                 <p className="text-gray-300 mb-4 text-center p-4">
                     Now that we have the Forecaster object. We can now train the model.
                 </p>

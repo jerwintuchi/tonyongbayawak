@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Diagram from '@/components/Diagram';
 
 export function Methodology() {
     return (
@@ -58,10 +59,7 @@ export function Methodology() {
                 <p className="text-gray-300 mb-4">
                     The study follows the <strong>Waterfall Methodology</strong>, dividing development into three phases:
                 </p>
-                <div className="text-center my-6">
-                    <Image src="/diagrams/waterfall-method.svg" alt="Feature Variables" width={600} height={350} className="rounded-lg shadow-md mx-auto" />
-                    <p className="text-sm text-gray-400 mt-2">Fig. 4 -Waterfall methodology for the Project </p>
-                </div>
+                <Diagram src="waterfall-method.svg" alt="Feature Variables" width={600} height={350} className="rounded-lg shadow-md mx-auto p-4" title="Fig. 4 -Waterfall methodology for the Project" />
                 <ul className="list-disc list-inside text-gray-300 mb-4 text-center">
                     <li><strong>Phase 1:</strong> Data Gathering and Cleaning</li>
                     <li><strong>Phase 2:</strong> Model Training and Validation</li>
