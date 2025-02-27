@@ -4,6 +4,9 @@ import BenchmarkDiscussion from './BenchMarkDIscussion'
 import AllModelForecast from './AllModelForecast'
 import TunedModelTable from './TunedModelTable'
 import Diagram from '@/components/Diagram'
+import NormalizedRMSE from './NormalizedRMSE'
+
+import Link from 'next/link'
 
 export default function ModelEvaluation() {
     return (
@@ -126,6 +129,36 @@ export default function ModelEvaluation() {
                             </li>
                         </ul>
                     </div>
+                </div>
+                <Diagram src="tuned-model-eval.svg" alt="Tuned Model Learning" width={600} height={300} className="rounded-lg shadow-md bg-white" title="Fig. 5 - Tuned Model Benchmark" />
+                <div className="flex flex-col items-center lg:items-center lg:w-full lg:max-w-4xl mx-auto mb-4">
+                    <h3 className="text-lg font-semibold text-white">Model Performance Evaluation</h3>
+                    <p>The table provides key performance metrics of the <span className="font-semibold">{"lstm_elite"}</span> model for both the test set and in-sample (training) data.</p>
+
+                    <h4 className="mt-2 font-semibold text-white">Key Observations:</h4>
+                    <ul className="list-disc list-inside text-left">
+                        <li>
+                            <span className="font-semibold">Test Set Performance:</span>
+                            <ul className="list-disc pl-5 text-gray-300">
+                                <li><span className="font-semibold">MAE:</span> 1.838 → Model predictions deviate by ~1.838 units on average.</li>
+                                <li><span className="font-semibold text-green-600">RMSE:</span> 2.395 → Typical error is about 2.395 units.</li>
+                                <li><span className="font-semibold">R²:</span> -0.229 → Negative value indicates poor generalization.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div className="flex flex-col items-center lg:items-center lg:w-full lg:max-w-4xl mx-auto">
+                    <p className="text-gray-300">
+                        The initial <span className='text-green-600'><strong>RMSE </strong></span>(2.395) value obtained from the lstm_elite model is a measure of how widely distributed the predicted data from the actual data points.
+                        In this context it measures the deviation of predicted price and the actual price from the test set.
+                    </p>
+                </div>
+                <NormalizedRMSE />
+                <div id="normalized-rmse" className="flex flex-col items-center lg:items-center lg:w-full lg:max-w-4xl mx-auto">
+                    <p className="text-gray-300">
+                        The RMSE is normalized according to the range of maximum value and minimum value from the test set in order to acquire a value that only ranges
+                        from 0 to 1 to be appropriately interpreted from the RMSE Accuracy Table (see. <Link className='text-blue-400 hover:underline' href={`/about/research-phase#rmse-accuracy-table`}>RMSE Accuracy Table</Link>) which results to
+                    </p>
                 </div>
             </div>
 
