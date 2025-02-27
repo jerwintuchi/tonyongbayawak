@@ -8,6 +8,7 @@ import NormalizedRMSE from './NormalizedRMSE'
 
 import Link from 'next/link'
 import NormalizedRMSEValue from './NormalizedRMSEValues'
+import TunedModelPerformance from './TunedModelPerformance'
 
 export default function ModelEvaluation() {
     return (
@@ -65,7 +66,7 @@ export default function ModelEvaluation() {
                     </p>
                 </div>
 
-                <Diagram src="all-model-perf.svg" alt="All Model Performance" width={1000} height={600} className="rounded-lg shadow-md bg-white" title="Test Set Performance of all Models" />
+                <Diagram src="all-model-perf.svg" alt="All Model Performance" width={1000} height={600} className="rounded-lg shadow-md bg-white" title="Fig. 4 - Test Set Performance of all Models" />
 
                 <div className="mt-6 bg-gray-800 p-6 rounded-lg shadow-md">
                     <h4 className="text-xl text-blue-300 font-semibold mb-2">Test Set Performance Analysis</h4>
@@ -105,12 +106,12 @@ export default function ModelEvaluation() {
                 {/* Tuned Model Section */}
                 <div className="flex flex-col items-center">
                     <TunedModelTable />
-                    <p className="text-sm text-gray-400 mt-2 text-center">Fig. 5 - Tuned Model Architecture</p>
+                    <p className="text-sm text-gray-400 mt-2 text-center">Fig. 7 - Tuned Model Architecture</p>
 
                     <div className='flex flex-row md:flex-row justify-center mt-4 gap-4'>
                         <Image src="/diagrams/tuned-model-learning.svg" alt="Tuned Model Learning" quality={100} width={600} height={300} className="rounded-lg shadow-md bg-white" />
                     </div>
-                    <p className="text-sm text-gray-400 mt-2 text-center">Fig. 4 - Test Set Performance of all Models</p>
+                    <p className="text-sm text-gray-400 mt-2 text-center">Fig. 8 - Tuned Model Learning Behavior</p>
 
                     <div className="mt-4 max-w-2xl text-gray-300 text-sm text-center">
                         <h3 className="text-lg font-semibold text-gray-400">Tuned Model Learning Behavior Explanation</h3>
@@ -131,7 +132,7 @@ export default function ModelEvaluation() {
                         </ul>
                     </div>
                 </div>
-                <Diagram src="tuned-model-eval.svg" alt="Tuned Model Learning" width={600} height={300} className="rounded-lg shadow-md bg-white" title="Fig. 5 - Tuned Model Benchmark" />
+                <Diagram src="tuned-model-eval.svg" alt="Tuned Model Learning" width={600} height={300} className="rounded-lg shadow-md bg-white" title="Fig. 9 - Tuned Model Benchmark" />
                 <div className="flex flex-col items-center lg:items-center lg:w-full lg:max-w-4xl mx-auto mb-4">
                     <h3 className="text-lg font-semibold text-white">Model Performance Evaluation</h3>
                     <p>The table provides key performance metrics of the <span className="font-semibold">{"lstm_elite"}</span> model for both the test set and in-sample (training) data.</p>
@@ -167,8 +168,9 @@ export default function ModelEvaluation() {
                         which proves that the tuned lstm_elite model is acceptably ‘Accurate’ when it comes to forecasting unseen datasets,
                         the absolute fit of the model to the actual price is as close as <strong>2.4</strong>.
                     </p>
-
                 </div>
+                <TunedModelPerformance />
+
             </div>
 
 

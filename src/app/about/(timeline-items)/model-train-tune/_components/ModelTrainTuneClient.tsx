@@ -86,7 +86,7 @@ export default function ModelTrainTuneClient() {
                 <p className="text-gray-300 mb-4 text-center p-4">
                     We instantiate a Forecaster object called <strong>&apos;f&apos;</strong> with the target variable <strong>(Closing Price)</strong> and current dates to plot the historic price of the AXS.
                 </p>
-                <Diagram src="axs-history.svg" alt="Hyperparameter Tuning" width={500} height={300} className="rounded-lg shadow-md w-full bg-white" title="AXS Price History" />
+                <Diagram src="axs-history.svg" alt="Hyperparameter Tuning" width={500} height={300} className="rounded-lg shadow-md w-full bg-white" title="Fig. 1 - AXS Price History" />
                 <p className="text-gray-300 mb-4 text-center p-4">
                     Now that we have the Forecaster object. We can now train the model.
                 </p>

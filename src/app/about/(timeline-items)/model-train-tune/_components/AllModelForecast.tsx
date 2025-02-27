@@ -5,7 +5,7 @@ export default function AllModelForecast() {
         <div className='flex flex-row md:flex-row justify-center mt-4 gap-4'>
             <Image src="/diagrams/all-model-forecast.svg" alt="All Model Performance" quality={100} width={1000} height={600} className="rounded-lg shadow-md bg-white" />
         </div>
-        <p className="text-sm text-gray-400 mt-2 text-center">Fig. 4 - Test Set Performance of all Models</p>
+        <p className="text-sm text-gray-400 mt-2 text-center">Fig. 6 - Forecast Performance of all Models</p>
 
         <div className="mt-6 bg-gray-800 p-6 rounded-lg shadow-md">
             <h4 className="text-xl text-blue-300 font-semibold mb-2">Test Set Performance Analysis</h4>
