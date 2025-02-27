@@ -23,7 +23,7 @@ export const teamMembers: TeamMember[] = [
     },
     {
         name: "Joshua Miguel R. Tuan",
-        role: "Full Stack Developer",
+        role: "Software Engineer",
         description: "Created the frontend and processed the test set from the API. Setup the data fetching and preprocessing script to generate the test set. Collaborated with Jerwin Peralta to optimize the AI model.",
         imageUrl: "/profile/tu-pfp.jpg",
         links: {
@@ -34,7 +34,7 @@ export const teamMembers: TeamMember[] = [
     },
     {
         name: "Jerwin A. Peralta",
-        role: "Full Stack Developer",
+        role: "Software Engineer",
         description: "Trained the AI model through comparison of different models, performed feature selection and selected the best model based on accuracy. Also contributed to the frontend development to ensure a seamless user experience.",
         imageUrl: "/profile/me-pfp.png",
         links: {
