@@ -72,7 +72,10 @@ export default function ModelEvaluation() {
                     </p>
                     <ul className="list-disc list-inside text-gray-300 mb-4">
                         <li>
-                            <strong><span className='text-yellow-300'>MLR (Yellow Line):</span></strong> Shows significant fluctuation and instability, indicating poor generalization due to its linear nature.
+                            <strong><span className='text-blue-700'>Actual Price:</span></strong> The actual price of the cryptocurrency (AXS).
+                        </li>
+                        <li>
+                            <strong><span className='text-yellow-300'>MLR:</span></strong> Shows significant fluctuation and instability, indicating poor generalization due to its linear nature.
                         </li>
                         <li>
                             <strong><span className='text-purple-600'>Layered LSTMs:</span></strong> Learn well but tend to overfit without proper regularization.
