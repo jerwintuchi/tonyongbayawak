@@ -2,7 +2,7 @@ import React from "react";
 
 const BenchmarkDiscussion = () => {
     return (
-        <div className="mt-6 bg-gray-800 p-6 rounded-lg shadow-md">
+        <div className="mt-6 bg-gray-800 p-6 rounded-lg shadow-md overflow-auto">
             <h2 className="text-xl font-bold mb-2">Model Evaluation Discussion</h2>
             <p className="mb-4">
                 The table presents a comparison of different machine learning models based on three evaluation metrics:

@@ -7,6 +7,7 @@ import Diagram from '@/components/Diagram'
 import NormalizedRMSE from './NormalizedRMSE'
 
 import Link from 'next/link'
+import NormalizedRMSEValue from './NormalizedRMSEValues'
 
 export default function ModelEvaluation() {
     return (
@@ -159,6 +160,14 @@ export default function ModelEvaluation() {
                         The RMSE is normalized according to the range of maximum value and minimum value from the test set in order to acquire a value that only ranges
                         from 0 to 1 to be appropriately interpreted from the RMSE Accuracy Table (see. <Link className='text-blue-400 hover:underline' href={`/about/research-phase#rmse-accuracy-table`}>RMSE Accuracy Table</Link>) which results to
                     </p>
+                </div>
+                <NormalizedRMSEValue />
+                <div className='flex flex-col items-center lg:items-center lg:w-full lg:max-w-4xl mx-auto'>
+                    <p className='text-gray-300 m-6'>
+                        which proves that the tuned lstm_elite model is acceptably ‘Accurate’ when it comes to forecasting unseen datasets,
+                        the absolute fit of the model to the actual price is as close as <strong>2.4</strong>.
+                    </p>
+
                 </div>
             </div>
 
