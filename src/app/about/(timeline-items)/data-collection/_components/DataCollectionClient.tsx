@@ -2,6 +2,7 @@
 
 import BackToTimeline from "@/components/buttons/back-timeline-btn";
 import React from "react";
+import LikertScaleTable from "./LikertScaleTable";
 
 export default function DataCollectionClient() {
     return (
@@ -47,6 +48,10 @@ export default function DataCollectionClient() {
                     <li>Confidence in <strong>holding, liquidating, selling, and buying AXS</strong>.</li>
                     <li>System <strong>usability assessment</strong> using ISO 9126 standards.</li>
                 </ul>
+                <LikertScaleTable />
+                <p className="text-sm text-gray-400 mt-2 text-center p-4">
+                    Fig. 1 - Likert Scale Interpretation
+                </p>
                 <p className="text-gray-300 mt-2">
                     Responses are collected from <strong>IT/CS professionals, students, and AXS investors</strong>, analyzed with <strong>IBM SPSS Cronbach’s Alpha (α)</strong> for reliability.
                 </p>
