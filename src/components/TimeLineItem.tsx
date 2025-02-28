@@ -22,7 +22,6 @@ export default function TimelineItem({
     isLeft,
     icon: Icon,
     link,
-    showModal,
 }: TimelineItemProps) {
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
@@ -40,8 +39,9 @@ export default function TimelineItem({
         },
     };
 
-    return (
+    const isCsExpo = link.includes("cs-expo");
 
+    return (
         <motion.div
             ref={ref}
             initial="hidden"
@@ -54,25 +54,27 @@ export default function TimelineItem({
                 className={`w-full md:w-1/2 ${isLeft ? "text-right pr-8" : "text-left pl-8"}`}
             >
                 <Link passHref href={link}>
-                    <div className={`bg-blue-900 hover:bg-blue-600 cursor-pointer bg-opacity-40 p-6 rounded-xl hover:bg-opacity-30 transition-shadow ${showModal ? "shadow-xl shadow-green-300 animate-pulse" : ""} ease-in duration-1000`}>
-                        <h3 className="text-2xl font-bold text-blue-400 mb-2">{title}</h3>
-                        <p className="text-sm text-gray-400 mb-2">{date}</p>
-                        <p className="text-gray-300">{description}</p>
+                    <div className={`cursor-pointer p-6 rounded-xl transition-shadow ease-in duration-1000 
+                        ${isCsExpo ? "bg-gradient-to-r from-purple-900 via-pink-700 to-purple-700 border-2 border-cyan-400 text-cyan-400 font-bold shadow-[0_0_15px_rgba(255,0,255,0.6)] animate-pulse"
+                            : "bg-blue-900 hover:bg-blue-600 text-blue-400"}`}>
+                        <h3 className={`text-2xl font-bold mb-2 ${isCsExpo ? "text-neon-pink" : "text-blue-400"}`}>{title}</h3>
+                        <p className={`text-sm mb-2 ${isCsExpo ? "text-white" : "text-gray-400"}`}>{date}</p>
+                        <p className={`text-gray-300 ${isCsExpo ? "text-white" : "text-gray-300"}`}>{description}</p>
                     </div>
                 </Link>
             </div>
 
             {/* Icon */}
             <div className="relative flex items-center justify-center">
-                <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center z-10">
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center z-10 
+                    ${isCsExpo ? "bg-neon-pink shadow-[0_0_10px_rgba(255,0,255,0.8)]" : "bg-blue-500"}`}>
                     <Icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="absolute w-0.5 h-full bg-blue-500 bg-opacity-25"></div>
+                <div className={`absolute w-0.5 h-full ${isCsExpo ? "bg-neon-pink bg-opacity-75" : "bg-blue-500 bg-opacity-25"}`}></div>
             </div>
 
             {/* Empty space to balance layout */}
             <div className="w-1/3"></div>
         </motion.div>
-
     );
 }

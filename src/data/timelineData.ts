@@ -4,6 +4,7 @@ import { FaLightbulb } from "react-icons/fa";
 import { GiArchiveResearch } from "react-icons/gi";
 import { LuBrainCircuit } from "react-icons/lu";
 import { GrTest } from "react-icons/gr";
+import { RiPresentationFill } from "react-icons/ri";
 
 // No need to call getBaseUrl() anymore since we'll use relative paths with Next.js Link
 export const timelineData = [
@@ -42,7 +43,11 @@ export const timelineData = [
         icon: GrTest , 
         link: "/about/testing" },
 
-    { title: "Project Completion", date: "January 2023", description: "Successfully completed the project with validated results and comprehensive documentation.", 
+    { title: "Presentation", date: "January 2023", description: "Successfully completed the project with validated results and comprehensive documentation.", 
         icon: AiOutlineFileDone, 
-        link: "/about/project-completion" },
+        link: "/about/presentation" },
+
+    { title: "CS Expo", date: "March 2023", description: "Presented the project at the CS Expo 2023.", 
+            icon: RiPresentationFill , 
+            link: "/about/cs-expo" }
 ];
