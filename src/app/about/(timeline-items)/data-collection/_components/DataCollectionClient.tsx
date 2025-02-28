@@ -34,7 +34,7 @@ export default function DataCollectionClient() {
                     <li>Moving Average</li>
                 </ul>
                 <p className="text-gray-300 mt-2">
-                    Data is parsed using Python’s JSON package and split into <strong>80% training and 20% testing sets</strong>, following best practices to avoid overfitting.
+                    Data is fetched and parsed using Python’s JSON package and converted into a Pandas DataFrame. The dataset is split into <strong>80% training and 20% testing sets</strong>, following best practices to avoid overfitting.
                 </p>
             </div>
 
