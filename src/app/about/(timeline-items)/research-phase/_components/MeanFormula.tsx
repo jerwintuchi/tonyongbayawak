@@ -17,7 +17,7 @@ export default function MeanFormula() {
     return (
         <MathJaxContext>
             <div className="max-w-6xl mx-auto bg-white bg-opacity-10 p-8 mt-8 rounded-lg shadow-lg text-gray-100">
-                <h2 className="text-3xl text-blue-300 font-semibold mb-4">
+                <h2 id="mean-formula" className="text-3xl text-blue-300 font-semibold mb-4">
                     Question Item Mean Formula
                 </h2>
                 <p className="text-gray-300 mb-4">
