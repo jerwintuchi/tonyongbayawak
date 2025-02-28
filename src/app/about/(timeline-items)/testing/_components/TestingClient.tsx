@@ -2,6 +2,7 @@ import Image from "next/image";
 import StressTestingTable from "./StressTestingTable";
 import Link from "next/link";
 import PortabilityTestingAccordion from "./PortabilityTestingAccordion";
+import BackToTimeline from "@/components/buttons/back-timeline-btn";
 
 export default function TestingClient() {
     return (
@@ -123,6 +124,10 @@ export default function TestingClient() {
                     Following several optimizations, the website now delivers <strong>faster response times, and improved user experience</strong>.
                     These results confirm the website’s <strong>readiness for public deployment</strong> and its ability to support large-scale usage effectively.
                 </p>
+            </div>
+
+            <div className="flex justify-center mt-6">
+                <BackToTimeline />
             </div>
         </div >
     );
