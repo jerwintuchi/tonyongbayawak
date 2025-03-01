@@ -8,6 +8,7 @@ import AlternatingSections from "./AlternatingSections";
 import EventGalleryCarousel from "./EventGallery";
 import EventGalleryDivider from "./EventGalleryDivider";
 import Presentation from "./Presentation";
+import SocialPost from "./SocialPost";
 
 export const images = [
     "/cs-expo/members1.jpg",
@@ -56,20 +57,7 @@ export default function CSExpoClient() {
             <Presentation />
 
             {/* Embedded Social Media Post */}
-            <div className="mt-16 mb-16">
-                <iframe
-                    src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/csexpo2024/posts/pfbid02kK2LyDfFrEQMPKUCcPhZY1Sg3Qg4fQRcpwGR2utyvm9kStwLHRpfh12BZ4wDdhZhl&show_text=true&width=500"
-                    width="500"
-                    height="699"
-                    style={{
-                        border: "none",
-                        overflow: "hidden",
-                        backgroundColor: "white",
-                    }}
-                    allowFullScreen={true}
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                ></iframe>
-            </div>
+            <SocialPost />
 
             {/* Image Carousel (Event Gallery) */}
             <EventGalleryDivider />

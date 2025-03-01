@@ -79,7 +79,7 @@ export default function Presentation() {
             </motion.div>
 
             <motion.div
-                className="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 px-4"
+                className="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 px-4 mt-12"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
@@ -93,7 +93,8 @@ export default function Presentation() {
                         The Panel’s Feedback
                     </h2>
                     <p className="text-gray-400 mt-2">
-                        Our panel of judges provided insightful feedback that helped us refine our project and improve our problem-solving skills.
+                        Our panel of judges provided insightful feedback and questions, ensuring our presentation was well-received.<br />
+                        It then became more of like a podcast/kwentuhan with the panelists together discussing our work.
                     </p>
                 </div>
             </motion.div>
