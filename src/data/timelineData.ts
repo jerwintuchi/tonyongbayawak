@@ -43,9 +43,9 @@ export const timelineData = [
         icon: GrTest , 
         link: "/about/testing" },
 
-    { title: "Presentation", date: "January 2023", description: "Successfully completed the project with validated results and comprehensive documentation.", 
+    { title: "Results", date: "January 2023", description: "Successfully completed the project with validated results and comprehensive documentation.", 
         icon: AiOutlineFileDone, 
-        link: "/about/presentation" },
+        link: "/about/results" },
 
     { title: "CS Expo", date: "March 2023", description: "Presented the project at the CS Expo 2023.", 
             icon: RiPresentationFill , 
