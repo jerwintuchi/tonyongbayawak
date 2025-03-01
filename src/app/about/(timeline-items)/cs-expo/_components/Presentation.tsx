@@ -92,7 +92,7 @@ export default function Presentation() {
                     <h2 className="text-4xl font-semibold text-blue-400 drop-shadow-[0_0_20px_rgba(60,211,238,1.0)]">
                         The Panel’s Feedback
                     </h2>
-                    
+
                     <p className="text-gray-400 mt-2">
                         Our panel of judges provided insightful feedback and questions, ensuring our presentation was well-received.<br />
                         It then became more of like a podcast/kwentuhan with the panelists together discussing our work.

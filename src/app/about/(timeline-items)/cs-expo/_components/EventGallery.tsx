@@ -2,6 +2,7 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import React from 'react'
 import Image from 'next/image'
 import { SlidingImages } from './CSExpoClient'
+import ScrollIndicator from './ScrollIndicator'
 
 export default function EventGalleryCarousel() {
     return (
@@ -10,15 +11,16 @@ export default function EventGalleryCarousel() {
                 <CarouselContent>
                     {SlidingImages.map((src, index) => (
                         <CarouselItem key={index}>
-
-                            <Image
-                                width={500}
-                                height={500}
-                                src={src}
-                                alt={`CS Expo Image ${index + 1}`}
-                                className="rounded-lg w-full h-auto"
-                            />
-
+                            <div className="relative">
+                                <Image
+                                    width={500}
+                                    height={500}
+                                    src={src}
+                                    alt={`CS Expo Image ${index + 1}`}
+                                    className="rounded-lg w-full h-auto"
+                                />
+                                <ScrollIndicator />
+                            </div>
                         </CarouselItem>
                     ))}
                 </CarouselContent>

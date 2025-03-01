@@ -9,7 +9,6 @@ import EventGalleryCarousel from "./EventGallery";
 import EventGalleryDivider from "./EventGalleryDivider";
 import Presentation from "./Presentation";
 import SocialPost from "./SocialPost";
-
 export const images = [
     "/cs-expo/members1.jpg",
     "/cs-expo/members2.jpg",
@@ -62,6 +61,7 @@ export default function CSExpoClient() {
             {/* Image Carousel (Event Gallery) */}
             <EventGalleryDivider />
             <EventGalleryCarousel />
+
         </div>
     );
 }
