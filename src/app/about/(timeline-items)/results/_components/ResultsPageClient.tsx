@@ -1,6 +1,7 @@
 import BackToTimeline from '@/components/buttons/back-timeline-btn';
 import Diagram from '@/components/Diagram';
-import React from 'react';
+import React, { Suspense } from 'react';
+import SoftwareDemo from './SoftwareDemo';
 
 export default function ResultsPageClient() {
     return (
@@ -21,9 +22,18 @@ export default function ResultsPageClient() {
                     guided users in making more informed choices regarding holding, selling, and liquidating assets.
                 </p>
             </div>
+            {/* Feedback from Respondents */}
+            <div className="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md mt-6">
+                <p className='text-yellow-300 text-sm mt-4 mx-12 text-center'>
+                    In accordance with our privacy policy, individual survey responses will remain confidential.<br /> Only general feedback and recommendations will be shared.
+                </p>
+                <Diagram src="feedback.png" alt="Feedback from Respondents" width={500} height={300} className="rounded-lg shadow-md bg-white" title="Fig. 1 - Optional Respondents' Feedback" />
+            </div>
+
+
             {/* Actual Forecast */}
             <div className="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md mt-6">
-                <Diagram src="forecast-result.svg" alt="Forecast Result" width={800} height={400} className="rounded-lg shadow-md bg-white" title="Fig. 1 - Forecast Result" />
+                <Diagram src="forecast-result.svg" alt="Forecast Result" width={800} height={400} className="rounded-lg shadow-md bg-white" title="Fig. 2 - Forecast Result" />
                 <p className='text-gray-300 mt-4'>
                     The figure presents a comparison between the actual <span className='text-orange-400'>AXS cryptocurrency price movements</span>  and the <span className='text-blue-400'>Predictions</span> made by the tuned LSTM model.
                     The actual price data shows notable volatility, particularly around mid-February, where a sharp increase is observed before stabilizing and eventually trending downward in early <strong>March</strong>.<br />
@@ -37,6 +47,23 @@ export default function ResultsPageClient() {
                 </p>
             </div>
 
+            {/* Software Demo */}
+            <div className="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md mt-6">
+                <h2 className='text-center text-3xl text-blue-400 mt-4'>
+                    Software Demo
+                </h2>
+                <Suspense fallback={<div className="animate-pulse bg-gray-700 w-full h-64 rounded-lg mt-4"></div>}>
+                    <SoftwareDemo />
+                </Suspense>
+                <p className='text-gray-300 mt-4'>
+                    The web app prototype was designed and refined based on expert feedback to provide a more comprehensive trading experience.
+                    Key features include <strong>Technical Analysis (TA) tools</strong>, allowing users to draw directly on the price chart,
+                    as well as the ability to enable <strong>popular indicators</strong> such as <strong>Relative Strength Index (RSI)</strong> and <strong>Moving Averages</strong> for better trend analysis.
+                    Users can also <strong>save their annotated charts</strong>, preserving their custom drawings and insights for future reference.
+                    Additionally, the system enables users to <strong>export forecast data in CSV format</strong>, making it easier to analyze trends offline.
+                    These enhancements ensure that traders have access to essential tools for data-driven decision-making, improving both usability and analytical depth.
+                </p>
+            </div>
 
             {/* Conclusions */}
             <div className="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md mt-6">
@@ -72,6 +99,6 @@ export default function ResultsPageClient() {
             <div className="flex justify-center mt-6">
                 <BackToTimeline />
             </div>
-        </div>
+        </div >
     );
 }
