@@ -13,6 +13,7 @@ export default function SlidingPicture() {
         const totalWidth = width; // Ensure full row movement
         const loopThreshold = -totalWidth / 2; // Triggers wrap earlier
 
+        // eslint-disable-next-line prefer-const
         controls = animate(xTranslation, [0, loopThreshold], {
             ease: "linear",
             duration: 14,
