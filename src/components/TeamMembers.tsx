@@ -71,7 +71,7 @@ export default function TeamMembers() {
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-white mb-4">Meet the Team</h2>
                     <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                        Get to know the brilliant minds behind our AI-powered forecasting solution.
+                        Get to know the minds behind our AI-powered forecasting solution.
                     </p>
                 </div>
 
