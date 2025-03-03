@@ -11,7 +11,7 @@ import Presentation from "./Presentation";
 import SocialPost from "./SocialPost";
 import CSExpoNews from "./NewsArticle";
 export const images = [
-    "/cs-expo/members1.jpg",
+    "/cs-expo/far-presentation-view.jpg",
     "/cs-expo/members2.jpg",
 ];
 

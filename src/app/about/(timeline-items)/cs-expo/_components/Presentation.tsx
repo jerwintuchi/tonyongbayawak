@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+
 import Image from 'next/image';
+import ThankYouPanelists from './ThankYouPanelists';
+import { useEffect, useState } from 'react';
 
 const panelMembers = [
     {
@@ -36,37 +38,68 @@ const panelMembers = [
     },
 ];
 
+
 export default function Presentation() {
+    const [randomValues, setRandomValues] = useState<{ x: number; y: number; delay: number; duration: number; }[]>([]);
+
+
+    // Generate random values only on the client
+    useEffect(() => {
+        setRandomValues(
+            panelMembers.map(() => ({
+                x: Math.random() * 10 - 5,
+                y: 50 + Math.random() * 20,
+                delay: Math.random() * 0.5,
+                duration: 1 + Math.random() * 0.5,
+            }))
+        );
+    }, []);
+
+
     return (
         <>
             {/* Panel Details Section */}
             <motion.div
-                className="mt-16 text-center mb-36 "
+                className="mt-16 text-center mb-36"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: true }}
             >
-                <h2 className="text-4xl font-semibold text-green-400 drop-shadow-[0_0_20px_rgba(60,238,100,1.0)] mb-6">
+                <h2 className="text-4xl font-bold text-green-400 drop-shadow-[0_0_20px_green] mb-6 uppercase tracking-widest">
                     Meet the Panel
                 </h2>
                 <div className="flex flex-wrap justify-center gap-8">
-                    {panelMembers.map((panel, index) => (
-                        <div key={index} className="bg-gray-900 p-6 rounded-lg shadow-lg w-80">
-                            <Image
-                                src={panel.image}
-                                alt={panel.name}
-                                width={150}
-                                height={150}
-                                className="rounded-full mx-auto mb-4 object-cover w-[150px] h-[150px]"
-                            />
-                            <h3 className="text-xl font-bold text-white">{panel.name}</h3>
-                            <p className="text-gray-400 text-sm mt-2">{panel.background}</p>
-                            <p className="text-gray-400 text-xs mt-2">{panel.description}</p>
-                        </div>
-                    ))}
+                    {panelMembers.map((panel, index) => {
+                        const { x, y, delay, duration } = randomValues[index] || { x: 0, y: 50, delay: 0, duration: 1 };
+
+                        return (
+                            <motion.div
+                                key={index}
+                                className={`relative p-6 rounded-lg shadow-2xl w-80 border border-cyan-400 overflow-hidden glitch glitch-${index}`}
+                                initial={{ opacity: 0, y, x }}
+                                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                                transition={{ duration, delay, ease: "easeOut" }}
+                                viewport={{ once: true }}
+                            >
+
+                                <div className="absolute inset-0 bg-cyan-400 opacity-10 blur-lg" />
+                                <Image
+                                    src={panel.image}
+                                    alt={panel.name}
+                                    width={150}
+                                    height={150}
+                                    className="rounded-full mx-auto mb-4 object-cover w-[150px] h-[150px] border-4 border-cyan-300 shadow-lg"
+                                />
+                                <h3 className="text-xl font-extrabold text-white tracking-wide drop-shadow-md">{panel.name}</h3>
+                                <p className="text-cyan-200 text-sm font-medium mt-2">{panel.background}</p>
+                                <p className="text-gray-300 text-xs mt-2 italic leading-relaxed">{panel.description}</p>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </motion.div>
+
 
             <motion.div
                 className="flex flex-col md:flex-row items-center md:items-start gap-8 pb-12 px-4"
@@ -153,6 +186,8 @@ export default function Presentation() {
                     </p>
                 </div>
             </motion.div>
+            {/* Thank You Section */}
+            <ThankYouPanelists />
         </>
     );
 }
