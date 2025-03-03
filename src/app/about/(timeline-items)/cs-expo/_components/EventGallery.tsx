@@ -1,7 +1,7 @@
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import React from 'react';
 import Image from 'next/image';
-import { SlidingImages } from './CSExpoClient';
+import { GalleryImages } from './CSExpoClient';
 import ScrollIndicator from './ScrollIndicator';
 
 export default function EventGalleryCarousel() {
@@ -14,7 +14,7 @@ export default function EventGalleryCarousel() {
 
             <Carousel>
                 <CarouselContent>
-                    {SlidingImages.map((src, index) => (
+                    {GalleryImages.map((src, index) => (
                         <CarouselItem key={index}>
                             <Image
                                 width={500}

@@ -9,9 +9,17 @@ import EventGalleryCarousel from "./EventGallery";
 import EventGalleryDivider from "./EventGalleryDivider";
 import Presentation from "./Presentation";
 import SocialPost from "./SocialPost";
+import CSExpoNews from "./NewsArticle";
 export const images = [
     "/cs-expo/members1.jpg",
     "/cs-expo/members2.jpg",
+];
+
+export const slidingImages = [
+    "/cs-expo/media-inq.jpg",
+    "/cs-expo/media-pop.jpg",
+    "/cs-expo/media-pinoy.jpg",
+    "/cs-expo/media-sparkup.jpg",
 ];
 
 export const EventGallery = [
@@ -21,7 +29,7 @@ export const EventGallery = [
     "/cs-expo/members1.jpg",
 ]
 
-export const SlidingImages = [
+export const GalleryImages = [
     "/cs-expo/members1.jpg",
     "/cs-expo/pantry-view2.jpg",
     "/cs-expo/redbull.jpg",
@@ -57,8 +65,24 @@ export default function CSExpoClient() {
             {/* Presentation */}
             <Presentation />
 
-            {/* Embedded Social Media Post */}
-            <SocialPost />
+            <div className="max-w-5xl w-full mx-auto p-6 flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
+                {/* Embedded Social Media Post - Fix for Overflow & Cropping */}
+                <div className="md:w-1/2 w-full flex justify-center overflow-x-auto">
+                    <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+                        <SocialPost />
+                    </div>
+                </div>
+
+                {/* CS Expo News (Already Responsive) */}
+                <div className="md:w-1/2 w-full flex justify-center">
+                    <CSExpoNews />
+                </div>
+            </div>
+
+
+
+
+
 
             {/* Image Carousel (Event Gallery) */}
             <EventGalleryDivider />
