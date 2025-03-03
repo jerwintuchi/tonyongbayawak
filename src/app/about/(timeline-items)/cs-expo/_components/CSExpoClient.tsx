@@ -23,8 +23,10 @@ export const EventGallery = [
 
 export const SlidingImages = [
     "/cs-expo/members1.jpg",
-    "/cs-expo/members2.jpg",
-    "/cs-expo/members3.jpg",
+    "/cs-expo/pantry-view2.jpg",
+    "/cs-expo/redbull.jpg",
+    "/cs-expo/poster1.jpg",
+    "/cs-expo/poster2.jpg",
 ]
 
 export default function CSExpoClient() {

@@ -23,7 +23,17 @@ const panelMembers = [
         ),
         image: "/cs-expo/doc-manuel.webp"
     },
-    { name: "Dr. Marc Reyes", background: "Cybersecurity Expert, IBM", image: "/cs-expo/panel3.jpg" },
+    {
+        name: "Mr. Marc Reyes",
+        background: "ML Engineering @ Angkas | ex-GCash | MS Computer Science @ UP Diliman",
+        description: (
+            <>
+                A <strong>Senior ML Engineering Manager</strong> with hands-on experience leading <strong>machine learning projects</strong> from the ground up. As <strong>GCash’s first ML engineer</strong>, helped define and grow the ML engineering function, developing frameworks and deploying impactful solutions that make a difference.
+                <br /><br />
+            </>
+        ),
+        image: "/cs-expo/mr-marc.jpg"
+    },
 ];
 
 export default function Presentation() {
@@ -66,7 +76,7 @@ export default function Presentation() {
                 viewport={{ once: true }}
             >
                 <div className="md:w-1/2 flex justify-center">
-                    <Image src="/cs-expo/solo-present-close.jpg" alt="Presenter Presenting" width={500} height={300} className="rounded-lg shadow-lg" />
+                    <Image src="/cs-expo/presentation2.jpg" alt="Presenter Presenting" width={500} height={300} className="rounded-lg shadow-lg" />
                 </div>
                 <div className="md:w-1/2 text-left">
                     <h2 className="text-4xl font-semibold text-pink-400 drop-shadow-[0_0_20px_rgba(238,60,211,1.0)]">
@@ -74,6 +84,50 @@ export default function Presentation() {
                     </h2>
                     <p className="text-gray-400 mt-2">
                         Delivering our thesis presentation was a defining moment. It was the culmination of months of hard work, teamwork, and innovation.
+                    </p>
+                </div>
+            </motion.div>
+
+            <motion.div
+                className="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 px-4 mt-12"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: true }}
+            >
+                <div className="md:w-1/2 flex justify-center">
+                    <Image src="/cs-expo/solo-present-close.jpg" alt="Panel Judges" width={500} height={300} className="rounded-lg shadow-lg" />
+                </div>
+                <div className="md:w-1/2 text-left pl-20">
+                    <h2 className="text-4xl font-semibold text-blue-400 drop-shadow-[0_0_20px_rgba(60,211,238,1.0)]">
+                        Presenter Segment
+                    </h2>
+
+                    <p className="text-gray-400 mt-2">
+                        The presenter shared their work and answered questions from the panelists. And also shared some of personal experience and insights.
+
+                    </p>
+                </div>
+            </motion.div>
+
+            <motion.div
+                className="flex flex-col md:flex-row items-center md:items-start gap-8 px-4 mt-12"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: true }}
+            >
+                <div className="md:w-1/2 flex justify-center pr-20">
+                    <Image src="/cs-expo/group-close.jpg" alt="Panel Judges" width={500} height={300} className="rounded-lg shadow-lg" />
+                </div>
+                <div className="md:w-1/2 text-left">
+                    <h2 className="text-4xl font-semibold text-pink-400 drop-shadow-[0_0_20px_rgba(238,60,211,1.0)]">
+                        Group Discussion
+                    </h2>
+
+                    <p className="text-gray-400 mt-2">
+                        The group discussed and answered question from the panelists. It was a great opportunity to learn from others and share our ideas.
+
                     </p>
                 </div>
             </motion.div>
