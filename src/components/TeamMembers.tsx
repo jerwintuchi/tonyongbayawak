@@ -74,7 +74,7 @@ export default function TeamMembers() {
                         Get to know the minds behind our AI-powered forecasting solution.
                     </p>
                 </div>
-
+        
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {teamMembers.map((member, index) => (
                         <TeamMemberCard key={index} member={member} index={index} />

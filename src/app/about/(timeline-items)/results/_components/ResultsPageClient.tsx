@@ -1,4 +1,5 @@
 import BackToTimeline from '@/components/buttons/back-timeline-btn';
+import Diagram from '@/components/Diagram';
 import React from 'react';
 
 export default function ResultsPageClient() {
@@ -20,6 +21,22 @@ export default function ResultsPageClient() {
                     guided users in making more informed choices regarding holding, selling, and liquidating assets.
                 </p>
             </div>
+            {/* Actual Forecast */}
+            <div className="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md mt-6">
+                <Diagram src="forecast-result.svg" alt="Forecast Result" width={800} height={400} className="rounded-lg shadow-md bg-white" title="Fig. 1 - Forecast Result" />
+                <p className='text-gray-300 mt-4'>
+                    The figure presents a comparison between the actual <span className='text-orange-400'>AXS cryptocurrency price movements</span>  and the <span className='text-blue-400'>Predictions</span> made by the tuned LSTM model.
+                    The actual price data shows notable volatility, particularly around mid-February, where a sharp increase is observed before stabilizing and eventually trending downward in early <strong>March</strong>.<br />
+                    The forecasted values, while closely following the overall trend, exhibit a smoother trajectory with fewer sharp fluctuations.
+                    The model successfully captures the long-term downward trend of AXS prices, demonstrating its effectiveness in predicting general price movements.<br /><br />
+                    However, some discrepancies are noticeable, particularly in areas where rapid price spikes or dips occur in the actual data.
+                    These deviations suggest that while the <span className='text-blue-400'>LSTM model</span> performs well for broader trend analysis, its responsiveness to sudden market fluctuations could be
+                    further refined. Enhancing the model by incorporating additional indicators, such as trading volume or market sentiment analysis, could improve short-term
+                    predictive accuracy. Despite these minor differences, the forecast provides valuable insights, helping investors anticipate price trends and make more informed
+                    financial decisions.
+                </p>
+            </div>
+
 
             {/* Conclusions */}
             <div className="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md mt-6">
