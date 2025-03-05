@@ -22,6 +22,7 @@ export default function TimelineItem({
     isLeft,
     icon: Icon,
     link,
+    showModal,
 }: TimelineItemProps) {
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
@@ -56,7 +57,8 @@ export default function TimelineItem({
                 <Link passHref href={link}>
                     <div className={`cursor-pointer p-6 rounded-xl transition-shadow ease-in duration-1000 
                         ${isCsExpo ? "bg-gradient-to-r from-purple-900 via-pink-700 to-purple-700 border-2 border-cyan-400 text-cyan-400 font-bold shadow-[0_0_15px_rgba(255,0,255,0.6)] animate-pulse"
-                            : "bg-blue-900 hover:bg-blue-600 text-blue-400"}`}>
+                            : "bg-blue-900 hover:bg-blue-600 text-blue-400"}
+                            ${showModal ? "shadow-lg shadow-green-400 animate-pulse transition-shadow ease-in duration-1000" : ""}`}>
                         <h3 className={`text-2xl font-bold mb-2 ${isCsExpo ? "text-neon-pink" : "text-blue-400"}`}>{title}</h3>
                         <p className={`text-sm mb-2 ${isCsExpo ? "text-white" : "text-gray-400"}`}>{date}</p>
                         <p className={`text-gray-300 ${isCsExpo ? "text-white" : "text-gray-300"}`}>{description}</p>
