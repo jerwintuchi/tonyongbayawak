@@ -1,7 +1,8 @@
 import React from 'react'
+import ForecastClient from './ForecastClient'
 
 export default function ForecastPage() {
     return (
-        <div>page</div>
+        <ForecastClient />
     )
 }
