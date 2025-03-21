@@ -15,6 +15,20 @@ venv/
 # Explicitly ignore the backend venv
 backend/venv/  
 
+# don't include pycache
+__pycache__/
+backend/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore MLflow files
+mlflow/
+mlruns/
+*.yaml
+# Ignore MLflow metadata files
+mlflow.*  
+
 
 # testing
 /coverage
