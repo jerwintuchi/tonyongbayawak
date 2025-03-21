@@ -10,6 +10,12 @@
 !.yarn/releases
 !.yarn/versions
 
+# don't include the python virtual environment
+venv/
+# Explicitly ignore the backend venv
+backend/venv/  
+
+
 # testing
 /coverage
 
