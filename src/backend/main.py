@@ -1,8 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI  # type: ignore
 import mlflow
-import lightgbm as lgb
+import lightgbm as lgb  # type: ignore
 import pandas as pd
-import joblib
+import joblib  # type: ignore
 import os
 
 # Initialize FastAPI
@@ -27,26 +27,39 @@ def home():
 @app.post("/predict")
 def predict(data: dict):
     """
-    Receives JSON input, processes it, and returns a prediction.
-    Expected input format: { "features": [values] }
+    Receives JSON input and returns a prediction.
+    Supports both single and batch predictions.
+
+    Expected input formats:
+    - Single prediction: {"features": [values]}
+    - Batch prediction: {"features": [[values], [values], ...]}
     """
     if model is None:
         return {"error": "Model not found. Train and save the model first."}
 
-    # Convert input to DataFrame
-    features = pd.DataFrame([data["features"]], columns=[
+    # Column names expected by the model
+    columns = [
         'high', 'low', 'open', 'volumefrom', 'volumeto', 'ATR',
         'Rolling_Std_10', 'hour', 'day_of_week', 'month',
         'Stoch_%K', 'Stoch_%D', 'Williams_%R',
         'Donchian_Upper', 'Donchian_Lower', 'Donchian_Mid'
-    ])
+    ]
 
-    # Make prediction
-    prediction = model.predict(features)[0]
+    # Determine if input is single or batch
+    if isinstance(data["features"][0], list):
+        # Batch input
+        features = pd.DataFrame(data["features"], columns=columns)
+    else:
+        # Single input
+        features = pd.DataFrame([data["features"]], columns=columns)
+
+    # Make predictions
+    predictions = model.predict(features)
 
     # Log prediction in MLflow
     with mlflow.start_run():
         mlflow.log_params(data)
-        mlflow.log_metric("prediction", prediction)
+        for i, pred in enumerate(predictions):
+            mlflow.log_metric(f"prediction_{i}", pred)
 
-    return {"prediction": int(prediction)}
+    return {"predictions": predictions.tolist()}
