@@ -24,6 +24,11 @@ def home():
     return {"message": "FastAPI + MLflow Server is Running!"}
 
 
+@app.get("/mlflow-version")
+def mlflow_version():
+    return {"mlflow_version": mlflow.__version__}
+
+
 @app.post("/predict")
 def predict(data: dict):
     """
@@ -31,6 +36,7 @@ def predict(data: dict):
     Supports both single and batch predictions.
 
     Expected input formats:
+    - *values are floats for each features*
     - Single prediction: {"features": [values]}
     - Batch prediction: {"features": [[values], [values], ...]}
     """
