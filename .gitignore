@@ -32,6 +32,7 @@ mlflow.*
 
 # testing
 /coverage
+__tests__/
 backend/__tests__/
 
 
