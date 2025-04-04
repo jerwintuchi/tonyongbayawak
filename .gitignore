@@ -32,6 +32,8 @@ mlflow.*
 
 # testing
 /coverage
+backend/__tests__/
+
 
 # next.js
 /.next/
