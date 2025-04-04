@@ -12,7 +12,7 @@ def test_fetch_data():
         print("Data fetched successfully!")
         print(data)
     else:
-        print("Failed to fetch data.")
+        print("Error: Failed to fetch data.")
 
 
 test_fetch_data()
